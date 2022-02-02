@@ -34,8 +34,40 @@
             <version>4.5.0</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
+
+    <build>
+        <defaultGoal>verify</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>15</source>
+                    <target>15</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <include>**Runner.java</include>
+                    </includes>
+                    <testFailureIgnore>false</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
